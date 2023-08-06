@@ -1,58 +1,37 @@
-# create-svelte
+# Svelte Fuse
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Svelte wrapper for [Fuse.js](https://fusejs.io/).
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+## Installation
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+### NPM
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install --save-dev svelte-fuse
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Yarn
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+yarn add svelte-fuse -D
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
+### PNPM
 
 ```bash
-npm run package
+pnpm add svelte-fuse -D
 ```
 
-To create a production version of your showcase app:
+## Usage
 
-```bash
-npm run build
-```
+You can view the [demo](https://svelte-fuse.vercel.app/) and its [source code](https://github.com/g1eny0ung/svelte-fuse/blob/main/src/routes/%2Bpage.svelte) for a working example.
 
-You can preview the production build with `npm run preview`.
+## How to contribute
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+If you have any ideas on how to improve this project, feel free to contribute. To do so, you can either open an issue or a pull request.
 
-## Publishing
+This project was developed with `@sveltejs/package`. Please read <https://kit.svelte.dev/docs/packaging> first if you want to change the source code.
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+## License
 
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+Under the [MIT License](License).
