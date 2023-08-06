@@ -32,8 +32,8 @@ You can view the [demo](https://svelte-fuse.vercel.app/) and its [source code](h
 
 ```svelte
 <script lang="ts">
-  import SvelteFuse from '$lib';
-  import type { ResultType } from '$lib';
+  import SvelteFuse from 'svelte-fuse';
+  import type { ResultType } from 'svelte-fuse';
 
   type Contact = {
     id: number;
