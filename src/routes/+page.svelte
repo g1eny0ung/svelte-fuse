@@ -125,7 +125,7 @@
 						class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-5 py-3 text-gray-500 transition hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:ring"
 						type="button"
 					>
-						<ion-icon name="logo-github" />
+						<ion-icon name="logo-github"></ion-icon>
 						<span class="text-sm font-medium">GitHub</span>
 					</a>
 				</div>
@@ -177,9 +177,9 @@
 							on:click={() => handleAddKey(key)}
 						>
 							{#if fuseOptions.keys.includes(key)}
-								<ion-icon name="checkmark-outline" class="mr-3 text-lg" />
+								<ion-icon name="checkmark-outline" class="mr-3 text-lg"></ion-icon>
 							{:else}
-								<ion-icon name="remove-outline" class="mr-3 text-lg" />
+								<ion-icon name="remove-outline" class="mr-3 text-lg"></ion-icon>
 							{/if}
 							{key}
 						</button>
@@ -202,15 +202,15 @@
 
 				<tbody class="divide-y divide-gray-200">
 					{#each result.length ? result.map((d) => d.item) : contacts as contact (contact.id)}
-						<tr class="odd:bg-gray-50">
-							<td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{contact.id}</td>
-							<td class="whitespace-nowrap px-4 py-2 text-gray-700">{contact.name}</td>
-							<td class="whitespace-nowrap px-4 py-2 text-gray-700">{contact.email}</td>
-							<td class="whitespace-nowrap px-4 py-2 text-gray-700">{contact.phone}</td>
-							<td class="whitespace-nowrap px-4 py-2 text-gray-700">
+						<tr class="odd:bg-gray-50 *:whitespace-nowrap *:px-4 *:py-2">
+							<td class="font-medium text-gray-900">{contact.id}</td>
+							<td class="text-gray-700">{contact.name}</td>
+							<td class="text-gray-700">{contact.email}</td>
+							<td class="text-gray-700">{contact.phone}</td>
+							<td class="text-gray-700">
 								{contact.address}
 							</td>
-							<td class="whitespace-nowrap px-4 py-2 text-gray-700">
+							<td class="text-gray-700">
 								{contact.birthday}
 							</td>
 						</tr>
