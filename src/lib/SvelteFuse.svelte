@@ -1,17 +1,19 @@
 <script lang="ts" generics="T">
 	import Fuse from 'fuse.js';
 
-	export let list: ReadonlyArray<T>;
-	export let options: Fuse.IFuseOptions<T>;
-	export let query: string;
+	type Props = {
+		list: ReadonlyArray<T>;
+		options: Fuse.IFuseOptions<T>;
+		query: string;
+		result: Fuse.FuseResult<T>[];
+	};
 
-	export let result: Fuse.FuseResult<T>[];
+	// eslint-disable-next-line no-useless-assignment -- result is a bindable output prop
+	let { list, options, query = $bindable(), result = $bindable() }: Props = $props();
 
-	$: fuse = new Fuse(list, options);
-	$: if (list) {
-		fuse.setCollection(list);
-	}
-	$: if (list || query) {
+	let fuse = $derived(new Fuse(list, options));
+
+	$effect(() => {
 		result = fuse.search(query);
-	}
+	});
 </script>

@@ -7,19 +7,19 @@ Svelte wrapper for [Fuse.js](https://fusejs.io/).
 ### NPM
 
 ```bash
-npm install --save-dev svelte-fuse
+npm install svelte-fuse
 ```
 
 ### Yarn
 
 ```bash
-yarn add svelte-fuse -D
+yarn add svelte-fuse
 ```
 
 ### PNPM
 
 ```bash
-pnpm add svelte-fuse -D
+pnpm add svelte-fuse
 ```
 
 ## Usage
@@ -56,11 +56,11 @@ You can view the [demo](https://svelte-fuse.vercel.app/) and its [source code](h
     // ...
   ];
 
-  let fuseOptions = {
+  let fuseOptions = $state({
     keys: ['name']
-  };
-  let query = '';
-  let result: ResultType<Contact> = [];
+  });
+  let query = $state('');
+  let result = $state<ResultType<Contact>>([]);
 </script>
 
 <SvelteFuse list={contacts} options={fuseOptions} bind:query bind:result />
@@ -68,19 +68,19 @@ You can view the [demo](https://svelte-fuse.vercel.app/) and its [source code](h
 
 ### Props
 
-| Name    | Type                     | Description                  |
-| ------- | ------------------------ | ---------------------------- |
-| list    | `ReadonlyArray<T>`       | The list of items to search. |
-| options | `Fuse.IFuseOptions<any>` | The Fuse.js options.         |
-| query   | `string`                 | The search query.            |
-| result  | `ResultType<T>`          | The search result.           |
+| Name    | Type                   | Description                  |
+| ------- | ---------------------- | ---------------------------- |
+| list    | `ReadonlyArray<T>`     | The list of items to search. |
+| options | `Fuse.IFuseOptions<T>` | The Fuse.js options.         |
+| query   | `string`               | The search query.            |
+| result  | `ResultType<T>`        | The search result.           |
 
 ## How to contribute
 
 If you have any ideas on how to improve this project, feel free to contribute. To do so, you can either open an issue or a pull request.
 
-This project was developed with `@sveltejs/package`. Please read <https://kit.svelte.dev/docs/packaging> first if you want to change the source code.
+This project was developed with `@sveltejs/package`. Please read <https://svelte.dev/docs/kit/packaging> first if you want to change the source code.
 
 ## License
 
-Under the [MIT License](License).
+Under the [MIT License](LICENSE).
