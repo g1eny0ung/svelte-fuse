@@ -78,5 +78,6 @@
 	},
 	"dependencies": {
 		"fuse.js": "^6.6.2"
-	}
+	},
+	"packageManager": "pnpm@11.18.0"
 }
